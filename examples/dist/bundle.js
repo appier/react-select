@@ -1321,6 +1321,10 @@ var Select = (0, _createReactClass2['default'])({
 				required: this.handleRequired(valueArray[0], nextProps.multi)
 			});
 		}
+
+		if (this.state.inputValue && this.props.value !== nextProps.value) {
+			this.setState({ inputValue: this.handleInputValueChange(nextProps.value) });
+		}
 	},
 
 	componentWillUpdate: function componentWillUpdate(nextProps, nextState) {
